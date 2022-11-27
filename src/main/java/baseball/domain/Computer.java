@@ -2,6 +2,7 @@ package baseball.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Computer implements ComputerNumberGenerate {
@@ -13,17 +14,22 @@ public class Computer implements ComputerNumberGenerate {
     private List<Integer> computerNumbers;
 
     public Computer(List<Integer> computerNumbers) {
-        this.computerNumbers = computerNumbers;
+        this.computerNumbers = generateComputerRandomNumbers();
+    }
+
+    public List<Integer> getComputerNumbers() {
+        return computerNumbers;
     }
 
     private List<Integer> generateComputerRandomNumbers() {
-        while (computerNumbers.size() < 3) {
+        List<Integer> computer = new ArrayList<>();
+        while (computer.size() < 3) {
             int randomNumber = generate();
-            if (computerNumbers.contains(randomNumber)) {
-                computerNumbers.add(randomNumber);
+            if (!computer.contains(randomNumber)) {
+                computer.add(randomNumber);
             }
         }
-        return computerNumbers;
+        return computer;
     }
 
     @Override
