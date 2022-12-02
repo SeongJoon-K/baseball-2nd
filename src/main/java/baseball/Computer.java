@@ -1,4 +1,4 @@
-package baseball.domain;
+package baseball;
 
 import camp.nextstep.edu.missionutils.Randoms;
 
@@ -31,6 +31,11 @@ public class Computer implements ComputerNumberGenerate {
         }
         return computer;
     }
+
+    public int get(int index) {
+        return computerNumbers.get(index);
+    }
+
 
     @Override
     public int generate() {
