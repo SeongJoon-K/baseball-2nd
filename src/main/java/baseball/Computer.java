@@ -13,7 +13,7 @@ public class Computer implements ComputerNumberGenerate {
      */
     private List<Integer> computerNumbers;
 
-    public Computer(List<Integer> computerNumbers) {
+    public Computer() {
         this.computerNumbers = generateComputerRandomNumbers();
     }
 
