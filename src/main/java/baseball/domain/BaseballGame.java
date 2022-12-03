@@ -9,7 +9,7 @@ public class BaseballGame {
     private List<Integer> userInputList;
 
     public BaseballGame(List<Integer> userInputList) {
-        this.userInputList = userInputList;
+        this.userInputList = generateUserInput();
     }
 
     public List<Integer> getUserInputList() {
@@ -24,7 +24,7 @@ public class BaseballGame {
         return userInputList;
     }
 
-    public int isStrike(Computer computerNumbers) {
+    private int isStrike(Computer computerNumbers) {
         int strikeCount = 0;
         for (int i = 0; i < userInputList.size(); i++) {
             if(userInputList.get(i) == computerNumbers.get(i)) {
@@ -34,12 +34,11 @@ public class BaseballGame {
         return strikeCount;
     }
 
-    public int isBall(Computer computerNumbers) {
-        userInputList.retainAll(computerNumbers.getComputerNumbers());
-        return userInputList.size() - isStrike(computerNumbers);
+    private int isBall(Computer computerNumbers) {
+        List<Integer> duplicateNumber = userInputList.retainAll(computerNumbers.getComputerNumbers();
+        return duplicateNumber.size() - isStrike(computerNumbers);
     }
-
-    // 유저의 값에서 꺼낸 첫번쨰 숫자랑 ComputerNumber에서 꺼낸 첫번째 숫자랑 비교해야한다.
-
-
+    private boolean isNothing(Computer computerNumbers) {
+        return isStrike(computerNumbers) == 0 && isBall(computerNumbers) == 0;
+    }
 }
