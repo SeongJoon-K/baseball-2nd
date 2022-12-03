@@ -1,6 +1,5 @@
 package baseball;
 
 public interface ComputerNumberGenerate {
-
-    int generate();
+    int computerNumberGenerate();
 }

@@ -24,7 +24,7 @@ public class Computer implements ComputerNumberGenerate {
     private List<Integer> generateComputerRandomNumbers() {
         List<Integer> computer = new ArrayList<>();
         while (computer.size() < 3) {
-            int randomNumber = generate();
+            int randomNumber = computerNumberGenerate();
             if (!computer.contains(randomNumber)) {
                 computer.add(randomNumber);
             }
@@ -38,7 +38,7 @@ public class Computer implements ComputerNumberGenerate {
 
 
     @Override
-    public int generate() {
+    public int computerNumberGenerate() {
         return Randoms.pickNumberInRange(1, 9);
     }
 }
